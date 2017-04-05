@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>移动端Rem简单布局</title>
+    <script type="text/javascript">
+        console.log(window.devicePixelRatio);
+        var pixelRatio = 1 / window.devicePixelRatio;
+        document.write('<meta name="viewport" content="width=device-width,maximum-scale=' + pixelRatio +
+            ',minimum-scale=' + pixelRatio + ',initial-scale=' + pixelRatio + ',user-scalable=no">');
+        // 屏幕尺寸越大，根元素的字体大小越大。
+
+        // 获取HTML节点
+        var html = document.getElementsByTagName('html')[0];
+        // 获取屏幕的宽度
+        var pageWidth = html.getBoundingClientRect().width;
+        html.style.fontSize = pageWidth / 25 + "px";
+        console.log(pageWidth);
+    </script>
+</head>
+<body>
+    <p>移动端简单布局</p>
+    <p>可能会存在兼容性问题，后续解决。</p>
+</body>
+</html>
